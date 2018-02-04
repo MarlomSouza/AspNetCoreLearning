@@ -1,0 +1,10 @@
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\bin\Debug\netcoreapp2.0\hosting.deps.json
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\bin\Debug\netcoreapp2.0\hosting.runtimeconfig.json
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\bin\Debug\netcoreapp2.0\hosting.runtimeconfig.dev.json
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\bin\Debug\netcoreapp2.0\hosting.dll
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\bin\Debug\netcoreapp2.0\hosting.pdb
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\obj\Debug\netcoreapp2.0\hosting.csproj.CoreCompileInputs.cache
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\obj\Debug\netcoreapp2.0\hosting.AssemblyInfoInputs.cache
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\obj\Debug\netcoreapp2.0\hosting.AssemblyInfo.cs
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\obj\Debug\netcoreapp2.0\hosting.dll
+C:\ALURA\ASP NET CORE\Udemy\AspNetCoreLearning\modulo2\hosting\obj\Debug\netcoreapp2.0\hosting.pdb
