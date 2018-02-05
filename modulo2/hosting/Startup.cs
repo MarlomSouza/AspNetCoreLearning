@@ -29,6 +29,8 @@ namespace hosting
         public void Configure(IApplicationBuilder app)
         {
             app.UseMiddleware<MyMiddleware>();
+            app.UseStaticFiles();
+
             var applicationName = _configuration.GetValue<string>("ApplicationName");
             app.Run(context => context.Response.WriteAsync($"Este aqui é um middleWare, Aplicacao = {applicationName}"));
 
