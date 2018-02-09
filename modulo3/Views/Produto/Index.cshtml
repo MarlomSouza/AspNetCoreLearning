@@ -1,5 +1,6 @@
-<form action="/api/produto" method="POST">
-    <input type="hidden" name="Id">
+<form action="/api/produto/Save" method="Post">
+    <label for="Id">Nome:</label>
+    <input type="number" name="Id" id="Id">
     <br>
     <label for="Nome">Nome:</label>
     <input type="text" name="Nome" id="Nome">
@@ -9,3 +10,8 @@
     <br>
     <input type="submit" value="Salvar">
 </form>
+
+@if(ViewBag.validacao != null)
+{
+    <label>@ViewBag.validacao</label>
+}

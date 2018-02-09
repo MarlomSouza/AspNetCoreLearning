@@ -3,7 +3,7 @@ using modulo3.Models;
 
 namespace modulo3.Controllers
 {
-    [Route("api/produto")]
+    [Route("/produto")]
     public class ProdutoController : Controller
     {
         public IActionResult Index()
@@ -18,9 +18,13 @@ namespace modulo3.Controllers
         }
 
         [HttpPost]
-        public string Post(Produto produto)
+        public IActionResult Save(Produto produto)
         {
-            return produto.Nome;
+            if (ModelState.IsValid)
+                ViewBag.validacao = "Produto cadastrado com sucesso!";
+
+            return View();
+
         }
     }
 }
