@@ -11,19 +11,16 @@ namespace modulo3.Controllers
             return View();
         }
 
-        [HttpGet("{id:int}")]
-        public string get(int id)
-        {
-            return HttpContext.Request.Path + id;
-        }
-
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult Save(Produto produto)
         {
             if (ModelState.IsValid)
                 ViewBag.validacao = "Produto cadastrado com sucesso!";
+            else
+                ViewBag.validacao = "Produto Incorreto!";
 
-            return View();
+            return View("Index");
 
         }
     }

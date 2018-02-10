@@ -1,12 +1,18 @@
-<form action="/api/produto/Save" method="Post">
-    <label for="Id">Nome:</label>
-    <input type="number" name="Id" id="Id">
+@model modulo3.Models.Produto
+
+
+<form asp-controller="Produto" asp-action="Save" method="Post">
+    <label for="Id">Id:</label>
+    <input  asp-for="Id" asp-format="int">
+    <span asp-validation-for="Id"></span>
     <br>
     <label for="Nome">Nome:</label>
-    <input type="text" name="Nome" id="Nome">
+    <input asp-for="Nome">
+    <span asp-validation-for="Nome"></span>
     <br>
     <label for="Preco">Preco:</label>
-    <input type="number" name="Preco" id="Preco">
+    <input asp-for="Preco">
+    <span asp-validation-for="Preco"></span>
     <br>
     <input type="submit" value="Salvar">
 </form>
