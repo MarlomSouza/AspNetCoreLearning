@@ -1,0 +1,22 @@
+@model modulo4.Domain.Category
+@using modulo4.Domain
+
+@{
+    ViewData["Title"] = "Cadastro de categoria";
+}
+
+<ul>
+@foreach (var item in ViewBag.Categories as List<Category>)
+{
+    <li>@item.Id - @item.Name </li>    
+    <l
+}
+</ul>
+
+<form asp-controller="Category" asp-action="Register" method="POST">
+    <div class="form-group"> 
+        <Label>Nome</Label>
+        <input asp-for="Name" class="form-control" asp-format="string">
+    </div>
+    <button type="submit">Salvar</button>
+</form>
