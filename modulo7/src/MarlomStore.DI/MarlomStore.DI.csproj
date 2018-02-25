@@ -1,24 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
- 
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  
- <ItemGroup>
-    <ProjectReference Include="..\MarlomStore.Domain\MarlomStore.Domain.csproj" />
-  </ItemGroup>
+
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
   </ItemGroup>
 
-
-<ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1 " />
-</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarlomStore.Data\MarlomStore.Data.csproj" />
+  </ItemGroup>
 
 </Project>
