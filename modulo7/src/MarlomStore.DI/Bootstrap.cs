@@ -9,7 +9,7 @@ namespace MarlomStore.DI
         public static void Configure(IServiceCollection services, string DBConnection)
         {
             services.AddDbContext<ApplicationDBContext>(options =>
-                options.UseSqlServer(DBConnection, x => x.MigrationsAssembly("MarlomStore.Data")));
+                options.UseSqlServer(DBConnection));
         }
     }
 }

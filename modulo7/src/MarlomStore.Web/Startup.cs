@@ -19,7 +19,7 @@ namespace MarlomStore.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
-            Bootstrap.Configure(services, Configuration.GetConnectionString("ConnectionStrings"));
+            Bootstrap.Configure(services, Configuration.GetConnectionString("BancoAula7"));
             services.AddMvc();
         }
 
