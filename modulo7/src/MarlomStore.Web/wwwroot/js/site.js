@@ -1,4 +1,4 @@
 // Write your JavaScript code.
 $(function() {
-  alert("oi");
+  console.log("oi");
 });

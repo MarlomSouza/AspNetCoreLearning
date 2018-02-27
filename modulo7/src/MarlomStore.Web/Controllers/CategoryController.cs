@@ -15,7 +15,7 @@ namespace MarlomStore.Web.Controllers
     {
         private readonly CategoryStore _caterogyStore;
 
-        protected CategoryController(CategoryStore categoryStore)
+        public CategoryController(CategoryStore categoryStore)
         {
             _caterogyStore = categoryStore;
         }
@@ -32,11 +32,10 @@ namespace MarlomStore.Web.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult CreateOrEdit(CategoryDto categoryDto)
         {
             _caterogyStore.Store(categoryDto);
-
-
             return View();
         }
 

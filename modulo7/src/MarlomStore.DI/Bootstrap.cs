@@ -14,7 +14,7 @@ namespace MarlomStore.DI
                 options.UseSqlServer(DBConnection));
 
             services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
-            services.AddSingleton(typeof(CategoryStore));
+            services.AddScoped(typeof(CategoryStore));
 
         }
     }
