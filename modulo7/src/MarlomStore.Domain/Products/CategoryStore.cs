@@ -9,7 +9,6 @@ namespace MarlomStore.Domain.Products
 
         public CategoryStore(IRepository<Category> categoryRepository) => _categoryRepository = categoryRepository;
 
-
         public void Store(CategoryDto categoryDto)
         {
             var category = _categoryRepository.Get(categoryDto.Id);

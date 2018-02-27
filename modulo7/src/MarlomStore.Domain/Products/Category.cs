@@ -1,9 +1,7 @@
 namespace MarlomStore.Domain.Products
 {
-    public class Category
+    public class Category : Entity
     {
-        public int Id { get; private set; }
-        public string Name { get; private set; }
         public Category(string name) => ValidadeAndSetName(name);
 
         public void Update(string name) => ValidadeAndSetName(name);

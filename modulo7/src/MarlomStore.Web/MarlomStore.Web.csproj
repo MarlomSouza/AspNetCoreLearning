@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MarlomStore.DI\MarlomStore.DI.csproj" />
+    <ProjectReference Include="..\MarlomStore.Domain\MarlomStore.Domain.csproj" />
   </ItemGroup>
 
 </Project>

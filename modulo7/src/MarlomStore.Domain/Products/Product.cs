@@ -1,9 +1,7 @@
 namespace MarlomStore.Domain.Products
 {
-    public class Product
+    public class Product : Entity
     {
-        public int Id { get; private set; }
-        public string Name { get; set; }
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
 
@@ -39,7 +37,6 @@ namespace MarlomStore.Domain.Products
             SetProperties(name, price, stockQuantity, category);
 
         }
-
 
     }
 }

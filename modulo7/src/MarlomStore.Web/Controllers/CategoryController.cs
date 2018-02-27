@@ -6,11 +6,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MarlomStore.Web.Models;
+using MarlomStore.Domain.Dtos;
+using MarlomStore.Domain.Products;
 
 namespace MarlomStore.Web.Controllers
 {
     public class CategoryController : Controller
     {
+        private readonly CategoryStore _caterogyStore;
+
+        protected CategoryController(CategoryStore categoryStore)
+        {
+            _caterogyStore = categoryStore;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -23,9 +32,10 @@ namespace MarlomStore.Web.Controllers
             return View();
         }
 
-        public IActionResult CreateOrEdit(int id)
+        public IActionResult CreateOrEdit(CategoryDto categoryDto)
         {
-            ViewData["Message"] = "Your contact page.";
+            _caterogyStore.Store(categoryDto);
+
 
             return View();
         }
