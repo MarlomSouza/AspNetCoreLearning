@@ -1,2 +1,2 @@
 # AspNetCoreLearning
-Udemy lessons
+Udemy asp net core lessons
