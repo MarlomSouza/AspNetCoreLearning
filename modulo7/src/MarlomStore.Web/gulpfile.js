@@ -20,6 +20,8 @@ gulp.task("js", function() {
       "./node_modules/jquery/dist/jquery.min.js",
       "./node_modules/jquery-validation/dist/jquery.validate.min.js",
       "./node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "./node_modules/popper.js/dist/popper.js",
+
       "./js/site.js"
     ])
     .pipe(gulp.dest("wwwroot/js/"))
