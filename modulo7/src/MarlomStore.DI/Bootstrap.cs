@@ -14,7 +14,7 @@ namespace MarlomStore.DI
             services.AddDbContext<ApplicationDBContext>(options =>
                 options.UseSqlServer(DBConnection));
 
-            services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(CategoryStore));
 
