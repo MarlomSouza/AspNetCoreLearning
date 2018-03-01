@@ -1,13 +1,6 @@
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MarlomStore.Web.Models;
-using MarlomStore.Domain.Dtos;
 using MarlomStore.Domain.Products;
+using MarlomStore.Web.ViewModels;
 
 namespace MarlomStore.Web.Controllers
 {
@@ -33,9 +26,9 @@ namespace MarlomStore.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateOrEdit(CategoryDto categoryDto)
+        public IActionResult CreateOrEdit(CategoryViewModel categoryViewModel)
         {
-            _caterogyStore.Store(categoryDto);
+            _caterogyStore.Store(categoryViewModel.Id, categoryViewModel.Name);
             return View();
         }
 

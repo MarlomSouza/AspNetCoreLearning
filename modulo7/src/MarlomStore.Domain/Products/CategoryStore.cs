@@ -1,4 +1,3 @@
-using MarlomStore.Domain.Dtos;
 using MarlomStore.Domain.Repository;
 
 namespace MarlomStore.Domain.Products
@@ -9,17 +8,17 @@ namespace MarlomStore.Domain.Products
 
         public CategoryStore(IRepository<Category> categoryRepository) => _categoryRepository = categoryRepository;
 
-        public void Store(CategoryDto categoryDto)
+        public void Store(int id, string name)
         {
-            var category = _categoryRepository.Get(categoryDto.Id);
+            var category = _categoryRepository.Get(id);
 
             if (category == null)
             {
-                category = new Category(categoryDto.Name);
+                category = new Category(name);
                 _categoryRepository.Save(category);
             }
             else
-                category.Update(categoryDto.Name);
+                category.Update(name);
 
         }
     }

@@ -1,4 +1,3 @@
-using MarlomStore.Domain.Dtos;
 using MarlomStore.Domain.Repository;
 
 namespace MarlomStore.Domain.Products
@@ -14,20 +13,20 @@ namespace MarlomStore.Domain.Products
             _categoryRepository = categoryRepository;
         }
 
-        public void Store(ProductDto productDto)
+        public void Store(int id, string name, decimal price, int stockQuantity, int categoryId)
         {
-            var category = _categoryRepository.Get(productDto.CategoryId);
+            var category = _categoryRepository.Get(categoryId);
             DomainException.When(category == null, "Category invalid!");
 
-            var product = _productRepository.Get(productDto.Id);
+            var product = _productRepository.Get(id);
 
             if (product == null)
             {
-                product = new Product(productDto.Name, productDto.Price, productDto.StockQuantity, category);
+                product = new Product(name, price, stockQuantity, category);
                 _productRepository.Save(product);
             }
             else
-                product.Update(productDto.Name, productDto.Price, productDto.StockQuantity, category);
+                product.Update(name,price, stockQuantity, category);
 
         }
     }
