@@ -21,7 +21,10 @@ namespace MarlomStore.Web
         {
 
             Bootstrap.Configure(services, Configuration.GetConnectionString("BancoAula7"));
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                config.Filters.Add(typeof(CustomExceptionFilter));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
