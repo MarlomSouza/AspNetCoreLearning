@@ -8,7 +8,7 @@ namespace MarlomStore.Web
     {
         public override void OnException(ExceptionContext context)
         {
-            var isAjaxCall = context.HttpContext.Request.Headers["x-request-with"] == "XMLHttpRequest";
+            bool isAjaxCall = context.HttpContext.Request.Headers["x-requested-with"] == "XMLHttpRequest";
 
             if (isAjaxCall)
             {
