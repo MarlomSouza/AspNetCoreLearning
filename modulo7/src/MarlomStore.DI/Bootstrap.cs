@@ -1,4 +1,6 @@
 using MarlomStore.Data;
+using MarlomStore.Data.Context;
+using MarlomStore.Data.Repositories;
 using MarlomStore.Domain;
 using MarlomStore.Domain.Products;
 using MarlomStore.Domain.Repository;

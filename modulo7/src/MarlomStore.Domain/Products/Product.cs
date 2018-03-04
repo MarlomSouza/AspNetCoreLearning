@@ -16,7 +16,7 @@ namespace MarlomStore.Domain.Products
 
         private void ValidadeValues(string name, decimal price, Category category)
         {
-            DomainException.When(string.IsNullOrEmpty(name), "Name is required");
+            ValidadeName(name);
             DomainException.When(price < 0, "Price can't be lower than 0");
             DomainException.When(StockQuantity < 0, "Stock minimun is 0");
             DomainException.When(category == null, "Category is required");

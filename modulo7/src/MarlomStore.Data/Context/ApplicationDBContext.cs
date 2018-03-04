@@ -1,11 +1,10 @@
 using MarlomStore.Domain.Products;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarlomStore.Data
+namespace MarlomStore.Data.Context
 {
     public class ApplicationDBContext : DbContext
     {
-
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         { }
 

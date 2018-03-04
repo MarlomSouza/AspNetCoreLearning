@@ -10,10 +10,9 @@ namespace MarlomStore.Domain.Products
 
         public void ValidadeAndSetName(string name)
         {
-            DomainException.When(string.IsNullOrEmpty(name), "Name is required");
+            ValidadeName(name);
 
             this.Name = name;
         }
-
     }
 }
