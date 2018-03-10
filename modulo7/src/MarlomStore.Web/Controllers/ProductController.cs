@@ -1,3 +1,4 @@
+using System.Linq;
 using MarlomStore.Domain.Products;
 using MarlomStore.Domain.Repository;
 using MarlomStore.Web.ViewModels;
@@ -21,13 +22,18 @@ namespace MarlomStore.Web.Controllers
         public IActionResult Index()
         {
             var product = _productRepository.Get();
-            if(product == null)
+            if (!product.Any())
                 return View();
 
-            var productViewModel = new ProductViewModel()
-            return null;
-            //ARRUMAR
+            var productViewModel = product.Select(p => new ProductViewModel()
+            {
+                Id = p.Id,
+                Name = p.Name,
+                CategoryId = p.Category.Id,
+                CategoryName = p.Category.Name
+            });
 
+            return View(productViewModel);
         }
     }
 }

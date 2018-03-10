@@ -2,6 +2,7 @@ namespace MarlomStore.Domain.Products
 {
     public class Product : Entity
     {
+        public Product() { }
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
 
