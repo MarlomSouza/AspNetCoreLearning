@@ -1,5 +1,5 @@
 @model MarlomStore.Web.ViewModels.ProductViewModel
-@using MarlomStore.Web.ViewsModels
+
 @{
     ViewData["Title"] = "Category";
 }
@@ -26,7 +26,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">Category</label>
                 <div class="col-md-2">
-                    <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(@Model.Categories,"Id","Name"))">
+                    <select class="form-control" asp-for="Category.Id" asp-items="@(new SelectList(@Model.Categories,"Id","Name"))">
                     </select>
                 </div>
             </div>

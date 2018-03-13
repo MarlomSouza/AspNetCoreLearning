@@ -29,11 +29,32 @@ namespace MarlomStore.Web.Controllers
             {
                 Id = p.Id,
                 Name = p.Name,
-                CategoryId = p.Category.Id,
-                CategoryName = p.Category.Name
+                Category = new CategoryViewModel() { Id = p.Category.Id, Name = p.Category.Name }
             });
 
             return View(productViewModel);
         }
+
+        public IActionResult CreateOrEdit(int id)
+        {
+            var viewModel = new ProductViewModel();
+            if (id == 0)
+                viewModel.Categories = _categoryRepository.Get().Select(c => new CategoryViewModel() { Id = c.Id, Name = c.Name });
+
+            var product = _productRepository.Get(id);
+
+            if (product != null)
+            {
+                viewModel.Id = product.Id;
+                viewModel.Name = product.Name;
+                viewModel.StockQuantity = product.StockQuantity;
+                viewModel.Price = product.Price;
+                viewModel.Category.Id = product.Category.Id;
+                viewModel.Category.Name = product.Category.Name;
+            }
+
+            return View(viewModel);
+        }
+
     }
 }
