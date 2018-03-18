@@ -38,8 +38,8 @@ namespace MarlomStore.Web.Controllers
         public IActionResult CreateOrEdit(int id)
         {
             var viewModel = new ProductViewModel();
-            if (id == 0)
-                viewModel.Categories = _categoryRepository.Get().Select(c => new CategoryViewModel() { Id = c.Id, Name = c.Name });
+
+            viewModel.Categories = _categoryRepository.Get().Select(c => new CategoryViewModel() { Id = c.Id, Name = c.Name });
 
             var product = _productRepository.Get(id);
 
@@ -54,6 +54,13 @@ namespace MarlomStore.Web.Controllers
             }
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult CreateOrEdit(ProductViewModel model)
+        {
+            _productStore.Store(model.Id, model.Name, model.Price, model.StockQuantity, model.Category.Id);
+            return RedirectToAction("Index");
         }
 
     }

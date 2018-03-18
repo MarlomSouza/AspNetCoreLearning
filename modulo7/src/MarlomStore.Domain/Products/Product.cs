@@ -5,7 +5,6 @@ namespace MarlomStore.Domain.Products
         public Product() { }
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
-
         public Category Category { get; set; }
 
         public Product(string name, decimal price, int stockQuantity, Category category)
