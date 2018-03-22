@@ -1,0 +1,12 @@
+{
+  "name": "modulo7",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "dotnet run -p .\\src\\MarlomStore.Web\\MarlomStore.Web.csproj",
+    "migration": "cd .\\src\\MarlomStore.Data\\ && dotnet ef --startup-project ..\\MarlomStore.Web\\MarlomStore.Web.csproj --project migrations add",
+    "remove-migration": "cd .\\src\\MarlomStore.Data\\ && dotnet ef --startup-project ..\\MarlomStore.Web\\MarlomStore.Web.csproj --project migrations remove",
+    "database-update": "cd .\\src\\MarlomStore.Data\\ && dotnet ef --startup-project ..\\MarlomStore.Web\\MarlomStore.Web.csproj --project database update"
+  }
+}

@@ -1,3 +1,5 @@
+using System;
+
 namespace MarlomStore.Domain.Products
 {
     public class Product : Entity
@@ -20,6 +22,12 @@ namespace MarlomStore.Domain.Products
             DomainException.When(price < 0, "Price can't be lower than 0");
             DomainException.When(StockQuantity < 0, "Stock minimun is 0");
             DomainException.When(category == null, "Category is required");
+        }
+
+        public void RemoveFromStock(int quantity)
+        {
+            DomainException.When(StockQuantity < quantity, "Quantity invalid");
+            StockQuantity -= quantity;
         }
 
         private void SetProperties(string name, decimal price, int stockQuantity, Category category)
