@@ -1,6 +1,7 @@
 using System.Linq;
 using MarlomStore.Domain.Products;
 using MarlomStore.Domain.Repository;
+using MarlomStore.Domain.Sales;
 using MarlomStore.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +10,12 @@ namespace MarlomStore.Web.Controllers
     public class SaleController : Controller
     {
         private readonly IRepository<Product> _productRepository;
+        private readonly SaleFactory _saleFactory;
 
-        public SaleController(IRepository<Product> productRepository)
+        public SaleController(IRepository<Product> productRepository, SaleFactory saleFactory)
         {
-
             _productRepository = productRepository;
+            _saleFactory = saleFactory;
         }
 
         [HttpGet]
@@ -31,13 +33,18 @@ namespace MarlomStore.Web.Controllers
 
             var sale = new SaleViewModel()
             {
-                ProductViewModel = productViewModel
+                Products = productViewModel
             };
 
             return View(sale);
         }
 
-
+        [HttpPost]
+        public IActionResult Create(SaleViewModel model)
+        {
+            _saleFactory.Create(model.ClientName, model.Product.Id, model.Quantity);
+            return Ok();
+        }
 
     }
 }

@@ -7,7 +7,9 @@ namespace MarlomStore.Web.ViewModels
     {
         public string ClientName { get; set; }
         public int Quantity { get; set; }
-        public IEnumerable<ProductViewModel> ProductViewModel { get; set; }
+
+        public ProductViewModel Product { get; set; }
+        public IEnumerable<ProductViewModel> Products { get; set; }
 
     }
 }
